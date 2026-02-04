@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Webpage Calculator</title>
+    <link rel="stylesheet" href="/styles/styles.css"/>
 </head>
 <body>
     <div class="container">
-        <h1><strong>Javascript</strong> Calculator</h1>
-        <p>Enter equation:</p>
+        <h1>Javascript Calculator</h1>
 
-        <input type="text" id="userInput"  placeholder="12+5"/>
-        <button id calcBtn>Calculate</button>
+        <p>Enter equation with a space (e.g. 12 + 5):</p>
+
+        <input type="text" id="userInput"  placeholder=""/>
+        <button id ="btn" type="button">Calculate</button>
+        <button id ="resetBtn" type="button">Reset</button>
         
-        <div id="result">Result</div>
+        <br>
+        <br>
+
+        <div id="result">Result: </div>
+        <p id="text"></p>
     </div>
 
-    <script src="script.js"></script>   
+    <script src="/js/script.js"></script>   
 </body>
 </html>
