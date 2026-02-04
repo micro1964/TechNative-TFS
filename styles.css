@@ -1,0 +1,93 @@
+/*Head*/
+.page-title { 
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 2rem; 
+    font-weight: 600; 
+    color: #ffffff; 
+    text-align: left !important;
+    
+    margin-left: 40px;  
+    margin-top: 20px;
+}
+
+/*base*/{ 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; 
+}
+
+
+body { 
+    background: radial-gradient(circle at top, #f1edf0 0, #dbb5cc 55%); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+#calculator {
+    max-width: 600px;
+    border-radius: 15px;
+    background: #dec4cc; 
+    padding: 20px 16px 24px; 
+    width: 320px; 
+    height: 500px;
+    box-shadow: 0 24px 60px rgba(95, 98, 95, 0.8), 0 0 0 1px rgba(62, 65, 63, 0.03); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px;
+}
+  
+#display {
+    height: 70px; 
+    padding: 20px;
+    border: none; 
+    border-radius: 50px; 
+    font-size: 1.6rem; 
+    color: #ece0e0; 
+    background: #878181; 
+    cursor: pointer; 
+    transition: transform 0.05s ease, filter 0.1s ease; 
+    box-shadow: 0 4px 0 rgba(217, 159, 199, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/*Key Grid*/
+#keys { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 14px; 
+}
+
+#keys button { 
+    height: 65px; 
+    border: none; 
+    border-radius: 50px; 
+    font-size: 1.6rem; 
+    color: #282626; 
+    background: #; 
+    cursor: pointer; 
+    transition: transform 0.05s ease, filter 0.1s ease; 
+    box-shadow: 0 4px 0 rgba(245, 234, 234, 0.7), 0 0 0 1px rgba(225, 220, 220, 0.05);
+}
+
+
+/* Operator buttons (+, -, *, /, =) */
+.operator-btn { 
+    background-color: #a5a5a5; 
+    color: #fff; 
+    -webkit-text-fill-color: #fff;
+}
+
+/* Utility buttons (C, %, delete) */
+.useful-btn {
+    background-color: #a5a5a5; 
+    -webkit-text-fill-color: #fff; 
+}
+
+/* Pressed effect */ 
+#keys button:active { 
+    transform: translateY(2px); 
+    filter: brightness(0.85); 
+    box-shadow: 0 1px 0 rgba(245, 244, 244, 0.9), 0 0 0 1px rgba(249, 243, 243, 0.03);
+}
