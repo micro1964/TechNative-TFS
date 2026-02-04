@@ -27,16 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
       display.style.color = "red";
       return;
     }
-
+// numbers 1 and 2 fun 
     const num1 = Number(parts[0]);
     const operator = parts[1];
     const num2 = Number(parts[2]);
 
+// check if numbers are valid 
     if (isNaN(num1) || isNaN(num2)) {
       display.textContent = "Error: Invalid numbers";
       display.style.color = "red";
       return;
     }
+    // Perform calculation
 
     let result;
 
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     display.textContent = `Result: ${result}`;
     display.style.color = "green";
 
-    // Save result to localStorage
+    // Save result to localStorage. combines input and result 
     localStorage.setItem("lastCalculation", input + " = " + result);
   });
 
