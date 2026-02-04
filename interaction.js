@@ -15,3 +15,189 @@ function calculate() {
     display.value = "Error";
   }
 }
+
+function backspace() {
+  const display = document.getElementById("display");
+  display.value = display.value.slice(0, -1);
+}
+
+function toggleSign() {
+  let display = document.getElementById("display");
+
+  if (display.value === "") return;
+
+  if (display.value.startsWith("-")) {
+    display.value = display.value.slice(1);
+  } else {
+    display.value = "-" + display.value;
+  }
+}
+
+function percent() {
+  let display = document.getElementById("display");
+  let value = display.value;
+
+  // Get last number
+  let match = value.match(/(\d+\.?\d*)$/);
+  if (!match) return;
+
+  let number = parseFloat(match[0]);
+
+  // Find operator before the number
+  let before = value.slice(0, -match[0].length);
+  let operatorMatch = before.match(/([+\-*/])\s*$/);
+
+  let percentValue;
+
+  if (operatorMatch && (operatorMatch[1] === "+" || operatorMatch[1] === "-")) {
+    // % of the previous number
+    let baseMatch = before.match(/(\d+\.?\d*)/g);
+    let base = baseMatch ? parseFloat(baseMatch.pop()) : 0;
+    percentValue = (base * number) / 100;
+  } else {
+    // Simple percent
+    percentValue = number / 100;
+  }
+
+  display.value = before + percentValue;
+}
+
+function addPi() {
+  const display = document.getElementById("display");
+
+  // If empty, just insert pi
+  if (display.value === "") {
+    display.value = Math.PI;
+    return;
+  }
+
+  // If last character is a number, auto-multiply
+  if (/[0-9)]$/.test(display.value)) {
+    display.value += "*" + Math.PI;
+  } else {
+    display.value += Math.PI;
+  }
+}
+function square() {
+  let display = document.getElementById("display");
+  let value = display.value;
+
+  // Get last number (including decimals and negatives)
+  let match = value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+
+  let number = parseFloat(match[0]);
+  let squared = number * number;
+
+  // Replace last number with its square
+  display.value = value.slice(0, -match[0].length) + squared;
+}
+function cube() {
+  let display = document.getElementById("display");
+  let value = display.value;
+
+  // Match the last number (supports negatives & decimals)
+  let match = value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+
+  let number = parseFloat(match[0]);
+  let cubed = number * number * number;
+
+  // Replace last number with its cube
+  display.value = value.slice(0, -match[0].length) + cubed;
+}
+
+function sin() {
+  let display = document.getElementById("display");
+  let value = display.value;
+
+  // Get last number (supports negatives & decimals)
+  let match = value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+
+  let degrees = parseFloat(match[0]);
+  let radians = (degrees * Math.PI) / 180;
+  let result = Math.sin(radians);
+
+  // Replace last number with sin(value)
+  display.value = value.slice(0, -match[0].length) + result;
+}
+
+function cos() {
+  let display = document.getElementById("display");
+  let value = display.value;
+
+  // Match the last number (negatives & decimals supported)
+  let match = value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+
+  let degrees = parseFloat(match[0]);
+  let radians = (degrees * Math.PI) / 180;
+  let result = Math.cos(radians);
+
+  // Replace last number with cos(value)
+  display.value = value.slice(0, -match[0].length) + result;
+}
+function tan() {
+  const display = document.getElementById("display");
+  const value = display.value;
+
+  // Match the last number (supports negatives & decimals)
+  const match = value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+
+  const degrees = parseFloat(match[0]);
+  const radians = (degrees * Math.PI) / 180;
+
+  // Calculate tangent
+  const result = Math.tan(radians);
+
+  // Replace last number with tan(value)
+  display.value = value.slice(0, -match[0].length) + result;
+}
+let memory = 0; // Store memory value
+
+// Clear memory
+function memoryClear() {
+  memory = 0;
+}
+
+// Recall memory
+function memoryRecall() {
+  const display = document.getElementById("display");
+  // If display ends with a number, append multiplication
+  if (/[0-9)]$/.test(display.value)) {
+    display.value += "*" + memory;
+  } else {
+    display.value += memory;
+  }
+}
+
+// Add to memory (memory = memory + current number)
+function memoryAdd() {
+  const display = document.getElementById("display");
+  let match = display.value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+  let number = parseFloat(match[0]);
+  memory += number;
+}
+
+// Subtract from memory (memory = memory - current number)
+function memorySubtract() {
+  const display = document.getElementById("display");
+  let match = display.value.match(/(-?\d+\.?\d*)$/);
+  if (!match) return;
+  let number = parseFloat(match[0]);
+  memory -= number;
+}
+
+function addChar(char) {
+  const display = document.getElementById("display");
+
+  // Optional: auto-insert multiplication if needed
+  if (char === "(" && /[0-9)]$/.test(display.value)) {
+    display.value += "*(";
+  } else {
+    display.value += char;
+  }
+}

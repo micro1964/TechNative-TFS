@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    </head>
+    <header><h1>My Calculator</h1>
+    </header>
   </head>
   <body>
     <div id="calculator">
-      <input id="display" readonly />
+      <input id="display" readonly/>
       <div id="keys">
-        <button onclick="appendToDisplay('&#9003')" class="useful-btn">&#9003</button>
-        <button onclick="clearDisplay()" class="useful-btn">C</button>
-        <button onclick="appendDisplay('%')" class="useful-btn">%</button>
+        <button onclick="addChar('(')"class="extra-btn">(</button>
+        <button onclick="addChar(')')"class="extra-btn">)</button>
+        <button onclick="memoryClear()"class="extra-btn">MC</button>
+        <button onclick="memoryRecall()"class="extra-btn">MR</button>
+        <button onclick="memoryAdd()"class="extra-btn">M+</button>
+        <button onclick="memorySubtract()"class="extra-btn">M-</button>
+        <button onclick="addPi()"class="extra-btn">π</button>
+        <button onclick="square()"class="extra-btn">x²</button>
+        <button onclick="cube()"class="extra-btn">x³</button>
+        <button onclick="sin()"class="extra-btn">sin</button>
+        <button onclick="cos()"class="extra-btn">cos</button>
+        <button onclick="tan()"class="extra-btn">tan</button>
+        <button onclick="backspace()" class="useful-btn">&#9003</button>
+        <button onclick="clearDisplay()" class="useful-btn">AC</button>
+        <button onclick="percent()" class="useful-btn">%</button>
         <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
         <button onclick="appendToDisplay('7')">7</button>
         <button onclick="appendToDisplay('8')">8</button>
@@ -26,11 +41,12 @@
         <button onclick="appendToDisplay('2')">2</button>
         <button onclick="appendToDisplay('3')">3</button>
         <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+        <button onclick="toggleSign()">±</button>
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
         <button onclick="calculate()">=</button>
       </div>
     </div>
-    <script src="mycalproject.js"></script>
+    <script src="interaction.js"></script>
   </body>
 </html>
