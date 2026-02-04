@@ -1,0 +1,64 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    text-align: center;
+    background-color: gray;
+}
+
+h1 {
+    font-size: 50px;
+    color: darkblue;
+}
+
+.container {
+    border-color: darkblue;
+    border-style:groove;
+    padding: 20px 10pX;
+    box-shadow: 10px 20px;
+    margin: 10%;
+    border-radius: 20px 10px;
+    background-color: whitesmoke;
+}
+
+#btn, #resetBtn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10%;
+
+}
+
+#btn:hover, #resetBtn:hover {
+    background: yellow;
+    color: black;
+}
+
+#text {
+    color: green    
+}
+
+.result {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  background-color: yellow;
+  font-size: 50px;
+
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  background-color: blasck;
+  font-size: 50px;
+}
+
+result {
+    font-size: 50px
+    font-
+}
