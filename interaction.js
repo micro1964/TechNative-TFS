@@ -53,14 +53,6 @@ function percent() {
   let display = document.getElementById("display");
   let value = display.value;
 
-  function percent(value) {
-    return value / 100;
-  }
-
-  function percentage(base, percent) {
-    return (base * percent) / 100;
-  }
-
   // Get last number (supports decimals)
   let match = value.match(/(\d+\.?\d*)$/);
   if (!match) return;
@@ -71,19 +63,26 @@ function percent() {
   let before = value.slice(0, -match[0].length);
   let operatorMatch = before.match(/([+\-*/])\s*$/);
 
-  let percentValue;
-
-  if (operatorMatch && (operatorMatch[1] === "+" || operatorMatch[1] === "-")) {
+  if (operatorMatch) {
     // % of the previous number
     let baseMatch = before.match(/(\d+\.?\d*)/g);
-    let base = baseMatch ? parseFloat(baseMatch.pop()) : 0;
-    percentValue = (base * number) / 100;
+    if (!baseMatch) return;
+    let base = parseFloat(baseMatch[baseMatch.length - 1]);
+    let percentValue = (base * number) / 100;
+
+    if (operatorMatch[1] === "+") {
+      display.value = (base + percentValue).toString();
+    } else if (operatorMatch[1] === "-") {
+      display.value = (base - percentValue).toString();
+    } else if (operatorMatch[1] === "*") {
+      display.value = (base * percentValue).toString();
+    } else if (operatorMatch[1] === "/") {
+      display.value = (base / percentValue).toString();
+    }
   } else {
     // Simple percent
-    percentValue = number / 100;
+    display.value = (number / 100).toString();
   }
-
-  display.value = before + percentValue;
 }
 
 function addPi() {

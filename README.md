@@ -1,25 +1,25 @@
 # TechNative-TFS
 
-Project Overview
+<h1 Project Overview>
 
 This project is a calculator web application developed by myself.
 My goal was to start with a basic calculator and progressively improve it by adding advanced scientific features, improving usability, and making the interface more robust.
 The project also helped me understand JavaScript logic, DOM manipulation, and how to debug and fix issues when adding new features.
 
-- HTML
+<h2 HTML>
 
 Used to structure the calculator layout
 Buttons for numbers, operators, and scientific functions
 Display area for showing calculations and results
 
-- CSS
+<h2 CSS>
 
 Used to style the calculator
 Responsive layout so the calculator works on different devices
 Color palette based on duck-egg blue, blue, and grey
 Button sizing and spacing for better usability
 
-- JavaScript
+<h2 JavaScript>
 
 Core logic of the calculator
 Handles button clicks and keyboard input
@@ -27,9 +27,9 @@ Performs mathematical calculations
 Manages advanced features like trigonometry, memory, and percentages
 Updates and controls the display
 
-Calculator Features
+<h1 Calculator Features>
 
-1 - Basic Calculator
+<h2 1 - Basic Calculator>
 
 Addition (+)
 Subtraction (−)
@@ -39,7 +39,7 @@ Clear (C / AC)
 Backspace (⌫)
 Parentheses ( )
 
-2 - Advanced / Scientific Features
+<h2 2 - Advanced / Scientific Features>
 
 π (Pi) button
 sin, cos, tan (trigonometric functions, using degrees)
@@ -53,9 +53,9 @@ MR (Memory Recall)
 M+ (Add to memory)
 M− (Subtract from memory)
 
-Development Process & Challenges
+<h1 Development Process & Challenges>
 
-1- Simple Calculator
+<h2 1- Simple Calculator>
 
 I initially built a basic calculator that could:
 
@@ -63,7 +63,7 @@ I initially built a basic calculator that could:
 - Perform simple arithmetic operations
 - Calculate results correctly
 
-2 - Adding Advanced Buttons
+<h2 2 - Adding Advanced Buttons>
 
 Once the basic calculator was working, I added:
 
@@ -83,10 +83,10 @@ I fixed these issues by:
 - Correcting DOM references
 - Ensuring each function handled only the last number in the display
 
-3 - Display Problem with Large Numbers
+<h2 3 - Display Problem with Large Numbers>
 When calculations became large, the single-line display could no longer show the full expression or result.
 
-Solution
+<h1 Solution>
 
 Replaced the single-line <input> with a multi-line display (<textarea>)
 Enabled text wrapping and scrolling
@@ -98,22 +98,22 @@ I fixed incorrect display references
 Ensured .value was used correctly
 Restored full calculator functionality
 
-Final Result
+<h1 Final Result>
 
-The final calculator:
+<h2 The final calculator:>
 Supports basic and scientific calculations
 Can display very large numbers and long expressions
 Works across different screen sizes
 Demonstrates problem-solving, debugging, and progressive enhancement
 
-What I Learned
+<h1 What I Learned>
 
 How to manipulate the DOM with JavaScript
 How calculator logic works internally
 How small changes can break functionality
 How to debug step by step instead of rewriting everything
 
-Future Improvements
+<h1 Future Improvements>
 
 DEG / RAD mode toggle
 Calculation history panel

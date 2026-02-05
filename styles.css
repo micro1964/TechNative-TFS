@@ -122,11 +122,10 @@ button {
 }
 
 button:hover {
-  background-color: hsl(150, 184%, 204%, 0.2);
+  opacity: 70%;
 }
 button:active {
-  background-color: rgb(167, 211, 238);
-  transform: translateY(2px);
+opacity: 90%;
 }
 .operator-btn {
   background-color: rgb(84, 165, 206);
