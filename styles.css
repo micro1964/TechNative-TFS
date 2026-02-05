@@ -26,7 +26,7 @@ body {
 
 
 body { 
-    background: radial-gradient(circle at top, #f1edf0 0, #dbb5cc 55%); 
+    background: radial-gradient(circle at top, #eec7df 0, #e3bed6 55%); 
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -36,7 +36,7 @@ body {
 #calculator {
     max-width: 600px;
     border-radius: 15px;
-    background: #dec4cc; 
+    background: #ebc7dd; 
     padding: 20px 16px 24px; 
     width: 320px; 
     height: 500px;

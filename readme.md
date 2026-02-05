@@ -1,3 +1,14 @@
 <h2>Calculator Mini Project</h2>
 
-This is the calculator mini project. In this I used HTML, CSS and JavaScript technologies to create a simple functioning calculator. 
+<p>Welcome to My Simple Calculator webpage built with HTML, CSS and JavaScript. This is a part of a mini project to showcase the use of these technologies presented in a functional way. </p>
+
+<br><p>This webpage should be  easy to use and understand for the user for any basic calculations</p>
+
+<h3>Functions Included</h3>
+<ul>
+    <li>Addition</li>
+    <li>Subtraction</li>
+    <li>Multiplication</li>
+    <li>Division</li>
+    <li>Percentage</li>
+</ul>
