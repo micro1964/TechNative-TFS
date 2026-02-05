@@ -1,9 +1,5 @@
 const display = document.getElementById("display");
 
-function appendToDisplay(value) { 
-    display.value += value; 
-}
-
 function clearDisplay() { 
     display.value = ""; 
 }
@@ -18,4 +14,16 @@ function calculate() {
         display.value = eval(display.value); } 
         catch (error) { 
         display.value = "Error"; } 
+}
+
+function appendToDisplay(value) {
+    if (value === "%") {
+        if (display.value.trim() === ""){
+            display.value = "Error";
+            return;
+        }
+        display.value = parseFloat(display.value) / 100;
+        return;
+    }
+    display.value +=value;
 }

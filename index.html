@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Calculator</title>
     <link rel="stylesheet" href="styles.css" />
-    <h2 class="page-title">Simple Calculator</h2>
+    <h1 class="title">Simple Calculator</h1>
   </head>
   <body>
     <div id="calculator">
@@ -13,7 +13,7 @@
       <div id="keys">
         <button onclick="backspace()" class="useful-btn">&#9003;</button>
         <button onclick="clearDisplay()" class="useful-btn">C</button>
-        <button onclick="appendDisplay('%')" class="useful-btn">%</button>
+        <button onclick="appendToDisplay('%')" class="useful-btn">%</button>
         <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
         <button onclick="appendToDisplay('7')">7</button>
         <button onclick="appendToDisplay('8')">8</button>
@@ -27,7 +27,7 @@
         <button onclick="appendToDisplay('2')">2</button>
         <button onclick="appendToDisplay('3')">3</button>
         <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
-        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('0')" class="zero-btn">0</button>
         <button onclick="appendToDisplay('.')">.</button>
         <button onclick="calculate()">=</button>
       </div>

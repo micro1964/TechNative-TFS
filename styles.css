@@ -1,16 +1,23 @@
-/*Head*/
-.page-title { 
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 2rem; 
-    font-weight: 600; 
-    color: #ffffff; 
-    text-align: left !important;
-    
-    margin-left: 40px;  
-    margin-top: 20px;
+/* Title */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
 }
 
-/*base*/{ 
+.title {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: transalteY(-50%);
+    font-size: 2rem;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff; 
+}
+
+/* Calculator Base */{ 
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
@@ -52,7 +59,7 @@ body {
     box-shadow: 0 4px 0 rgba(217, 159, 199, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-/*Key Grid*/
+/* Key Grid */
 #keys { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
@@ -90,4 +97,15 @@ body {
     transform: translateY(2px); 
     filter: brightness(0.85); 
     box-shadow: 0 1px 0 rgba(245, 244, 244, 0.9), 0 0 0 1px rgba(249, 243, 243, 0.03);
+}
+
+/* Zero Button */
+.zero-btn {
+    grid-column: span 2; 
+    border-radius: 50px; 
+    padding-left: 30px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; padding: 0;
+    text-align: center; 
 }
