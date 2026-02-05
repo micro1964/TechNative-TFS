@@ -201,3 +201,32 @@ function addChar(char) {
     display.value += char;
   }
 }
+
+function calculate() {
+  const display = document.getElementById("display");
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
+  }
+}
+
+//Prevent Unmatched Parentheses
+
+function addChar(char) {
+  const display = document.getElementById("display");
+  let openBrackets = (display.value.match(/\(/g) || []).length;
+  let closeBrackets = (display.value.match(/\)/g) || []).length;
+
+  if (char === "(") {
+    if (/[0-9)]$/.test(display.value)) {
+      display.value += "*(";
+    } else {
+      display.value += "(";
+    }
+  }
+
+  if (char === ")" && openBrackets > closeBrackets) {
+    display.value += ")";
+  }
+}
