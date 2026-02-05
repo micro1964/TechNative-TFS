@@ -27,3 +27,16 @@ function appendToDisplay(value) {
     }
     display.value +=value;
 }
+
+function percent() {
+    let display = document.getElementById("display");
+    let value = display.value;
+}
+
+function percent(value) {
+    return value / 100;
+}
+
+function percentage(base, percent) {
+    return (base * percent) / 100;
+}
