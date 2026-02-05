@@ -1,18 +1,15 @@
-const display = document.getElementById("display");
-
-// append to display function that adds the clicked button's value to the display
-
 function appendToDisplay(input) {
+  const display = document.getElementById("display");
   display.value += input;
 }
 
-// clear display function that resets the display to an empty string
+// clear display function that resets the display to an empty string (AC button)
 
 function clearDisplay() {
   display.value = "";
 }
 
-// update display function that sets the display to a specific value (used for memory functions)
+// update the calculator display and automatically scroll it, useful for multi-line or long calculations
 function updateDisplay(value) {
   const display = document.getElementById("display");
   display.value = value;
@@ -49,12 +46,22 @@ function toggleSign() {
     display.value = "-" + display.value;
   }
 }
+
 // percent function that calculates percentage based on the last number and operator
+
 function percent() {
   let display = document.getElementById("display");
   let value = display.value;
 
-  // Get last number
+  function percent(value) {
+    return value / 100;
+  }
+
+  function percentage(base, percent) {
+    return (base * percent) / 100;
+  }
+
+  // Get last number (supports decimals)
   let match = value.match(/(\d+\.?\d*)$/);
   if (!match) return;
 
@@ -206,26 +213,6 @@ function memorySubtract() {
   if (!match) return;
   let number = parseFloat(match[0]);
   memory -= number;
-}
-
-function addChar(char) {
-  const display = document.getElementById("display");
-
-  // Optional: auto-insert multiplication if needed
-  if (char === "(" && /[0-9)]$/.test(display.value)) {
-    display.value += "*(";
-  } else {
-    display.value += char;
-  }
-}
-
-function calculate() {
-  const display = document.getElementById("display");
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = "Error";
-  }
 }
 
 //Prevent Unmatched Parentheses
