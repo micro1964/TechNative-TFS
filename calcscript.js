@@ -18,17 +18,20 @@ function calculate() {
 
 function appendToDisplay(value) {
     if (value === "%") {
-        if (display.value.trim() === ""){
+        //if display is empty or not valid number - shows error
+        if (display.value.trim() === "" || isNaN(display.value)){
             display.value = "Error";
             return;
         }
+
+        //converts number to percentage
         display.value = parseFloat(display.value) / 100;
         return;
     }
-    display.value +=value;
+    display.value += value;
 }
 
-function percent() {
+/*function percent () {
     let display = document.getElementById("display");
     let value = display.value;
 }
@@ -39,4 +42,4 @@ function percent(value) {
 
 function percentage(base, percent) {
     return (base * percent) / 100;
-}
+}*/
