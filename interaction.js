@@ -19,8 +19,30 @@ function updateDisplay(value) {
 // calculate function that evaluates the expression in the display and shows the result
 
 function calculate() {
+  let display = document.getElementById("display");
+  let expression = display.value;
+
+  // Handle percentage operations: base op num%
+  expression = expression.replace(
+    /(\d+(?:\.\d+)?)([+\-*/])(\d+(?:\.\d+)?)%/g,
+    (match, base, op, num) => {
+      base = parseFloat(base);
+      num = parseFloat(num);
+      if (op === "+" || op === "-") {
+        return `(${base} ${op} (${base} * ${num} / 100))`;
+      } else if (op === "*") {
+        return `(${base} * (${num} / 100))`;
+      } else if (op === "/") {
+        return `(${base} / (${num} / 100))`;
+      }
+    },
+  );
+
+  // Handle remaining % as /100
+  expression = expression.replace(/%/g, "/100");
+
   try {
-    display.value = eval(display.value);
+    display.value = eval(expression);
   } catch (error) {
     display.value = "Error";
   }
@@ -40,49 +62,29 @@ function toggleSign() {
 
   if (display.value === "") return;
 
-  if (display.value.startsWith("-")) {
-    display.value = display.value.slice(1);
+  let value = display.value;
+
+  // Check if ends with (-number)
+  let negativeMatch = value.match(/(\(-(\d+(?:\.\d+)?)\))$/);
+  if (negativeMatch) {
+    // Remove the (- and )
+    value = value.slice(0, -negativeMatch[0].length) + negativeMatch[2];
   } else {
-    display.value = "-" + display.value;
+    // Find the last number and wrap with (- )
+    let numberMatch = value.match(/(\d+(?:\.\d+)?)$/);
+    if (numberMatch) {
+      value =
+        value.slice(0, -numberMatch[0].length) + "(-" + numberMatch[0] + ")";
+    }
   }
+
+  display.value = value;
 }
 
 // percent function that calculates percentage based on the last number and operator
 
 function percent() {
-  let display = document.getElementById("display");
-  let value = display.value;
-
-  // Get last number (supports decimals)
-  let match = value.match(/(\d+\.?\d*)$/);
-  if (!match) return;
-
-  let number = parseFloat(match[0]);
-
-  // Find operator before the number
-  let before = value.slice(0, -match[0].length);
-  let operatorMatch = before.match(/([+\-*/])\s*$/);
-
-  if (operatorMatch) {
-    // % of the previous number
-    let baseMatch = before.match(/(\d+\.?\d*)/g);
-    if (!baseMatch) return;
-    let base = parseFloat(baseMatch[baseMatch.length - 1]);
-    let percentValue = (base * number) / 100;
-
-    if (operatorMatch[1] === "+") {
-      display.value = (base + percentValue).toString();
-    } else if (operatorMatch[1] === "-") {
-      display.value = (base - percentValue).toString();
-    } else if (operatorMatch[1] === "*") {
-      display.value = (base * percentValue).toString();
-    } else if (operatorMatch[1] === "/") {
-      display.value = (base / percentValue).toString();
-    }
-  } else {
-    // Simple percent
-    display.value = (number / 100).toString();
-  }
+  appendToDisplay("%");
 }
 
 function addPi() {
@@ -183,35 +185,6 @@ let memory = 0; // Store memory value
 // Clear memory
 function memoryClear() {
   memory = 0;
-}
-
-// Recall memory
-function memoryRecall() {
-  const display = document.getElementById("display");
-  // If display ends with a number, append multiplication
-  if (/[0-9)]$/.test(display.value)) {
-    display.value += "*" + memory;
-  } else {
-    display.value += memory;
-  }
-}
-
-// Add to memory (memory = memory + current number)
-function memoryAdd() {
-  const display = document.getElementById("display");
-  let match = display.value.match(/(-?\d+\.?\d*)$/);
-  if (!match) return;
-  let number = parseFloat(match[0]);
-  memory += number;
-}
-
-// Subtract from memory (memory = memory - current number)
-function memorySubtract() {
-  const display = document.getElementById("display");
-  let match = display.value.match(/(-?\d+\.?\d*)$/);
-  if (!match) return;
-  let number = parseFloat(match[0]);
-  memory -= number;
 }
 
 //Prevent Unmatched Parentheses
