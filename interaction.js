@@ -1,12 +1,25 @@
 const display = document.getElementById("display");
 
+// append to display function that adds the clicked button's value to the display
+
 function appendToDisplay(input) {
   display.value += input;
 }
 
+// clear display function that resets the display to an empty string
+
 function clearDisplay() {
   display.value = "";
 }
+
+// update display function that sets the display to a specific value (used for memory functions)
+function updateDisplay(value) {
+  const display = document.getElementById("display");
+  display.value = value;
+  display.scrollTop = display.scrollHeight;
+}
+
+// calculate function that evaluates the expression in the display and shows the result
 
 function calculate() {
   try {
@@ -16,10 +29,14 @@ function calculate() {
   }
 }
 
+// backspace function that removes the last character from the display
+
 function backspace() {
   const display = document.getElementById("display");
   display.value = display.value.slice(0, -1);
 }
+
+// toggle sign function that adds or removes a negative sign from the current number
 
 function toggleSign() {
   let display = document.getElementById("display");
@@ -32,7 +49,7 @@ function toggleSign() {
     display.value = "-" + display.value;
   }
 }
-
+// percent function that calculates percentage based on the last number and operator
 function percent() {
   let display = document.getElementById("display");
   let value = display.value;
