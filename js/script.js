@@ -6,15 +6,16 @@ button.addEventListener("click", () => {
     let cleanInput = inputField.value.trim();
     let parts = cleanInput.split(" ").filter(Boolean);
 
-    // Reset classes each click
     resultDisplay.className = "result";
 
+    // Input length
     if (parts.length !== 3) {
         resultDisplay.textContent = "Error: Use format like 12 + 5";
         resultDisplay.classList.add("error");
         return;
     }
 
+    // Number and operator
     let num1 = parseFloat(parts[0]);
     let operator = parts[1];
     let num2 = parseFloat(parts[2]);
@@ -25,6 +26,7 @@ button.addEventListener("click", () => {
         return;
     }
 
+    // Calculator functions
     let finalResult;
 
     switch (operator) {
@@ -38,6 +40,7 @@ button.addEventListener("click", () => {
             finalResult = multiply(num1, num2);
             break;
         case "/":
+            // Divide by zero
             if (num2 === 0) {
                 resultDisplay.textContent = "Error: Division by zero";
                 resultDisplay.classList.add("error");
@@ -51,7 +54,7 @@ button.addEventListener("click", () => {
             return;
     }
 
-    // ✅ Success case
+    // Success case
     resultDisplay.textContent = `Result: ${finalResult}`;
     resultDisplay.classList.add("success");
 
@@ -72,6 +75,7 @@ inputField.addEventListener("keyup", (e) => {
     }
 });
 
+// Reset button
 const resetButton = document.getElementById("resetBtn");
 
 resetButton.addEventListener("click", () => {

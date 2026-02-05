@@ -6,8 +6,20 @@ body {
 }
 
 h1 {
-    font-size: 50px;
-    color: darkblue;
+    font-size: 45px;
+    font-style: oblique;
+    color: white;
+    border-style:hidden;
+    background-color: darkblue;
+    border-radius: 50rem;
+    
+}
+
+@media (min-width: 900px) {
+    h1 {
+        font-size: 80px;
+        padding: 50px 25px; 
+    }
 }
 
 .container {
@@ -39,7 +51,7 @@ h1 {
 }
 
 .result {
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 10px;
 }
 
@@ -47,18 +59,19 @@ h1 {
   color: green;
   font-weight: bold;
   background-color: yellow;
-  font-size: 50px;
+  font-size: 40px;
 
 }
 
 .error {
   color: red;
   font-weight: bold;
-  background-color: blasck;
-  font-size: 50px;
+  background-color: black;
+  font-size: 30px;
 }
 
-result {
-    font-size: 50px
-    font-
+#userInput {
+    border-style:groove;
+    border-color: darkblue;
 }
+
