@@ -5,9 +5,11 @@
 
 <h3>Functions Included</h3>
 <ul>
-    <li>Addition</li>
-    <li>Subtraction</li>
-    <li>Multiplication</li>
-    <li>Division</li>
-    <li>Percentage</li>
+    <li>Addition (+)</li>
+    <li>Subtraction (−)</li>
+    <li>Multiplication (×)</li>
+    <li>Division (÷)</li>
+    <li>Percentage (%)</li>
+    <li>Clear (C)</li>
+    <li>Backspace (⌫)</li>
 </ul>
