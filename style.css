@@ -1,3 +1,5 @@
+
+
 /* this is a box! No! There is more*/
 .box {
   width: 300px;
@@ -18,3 +20,12 @@
   box-sizing: border-box;
 }
 /*I need add more stuff but idk remember how to do it*/
+
+/*Hey this worked but not really*/
+div {
+  width: 300px;
+  border: 15px solid rgb(150, 171, 150);
+  padding: 50px;
+  margin: 20px;
+}
+/*just keep adding stuff I will clean this random stuff later*/

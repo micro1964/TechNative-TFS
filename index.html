@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Calculator</title>
-</head>
-<body>
 
+  <style>
+    .basic-box {
+      width: 250px;
+      border: 2px solid #000;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+  </style>
+</head>
+<!--DOSE NOT WORK -->
+<!--edit It work then wtf is happening with css need to look into that -_- -->
+<body>
   <h3>Calculator</h3>
 
-  <input type="text" id="expression" placeholder="e.g. 10 + 5">
+  <div class="basic-box">
+    <input type="text" id="expression" placeholder="e.g. 10 + 5">
 
-  <button id="calculateBtn">Calculate</button>
+    <br><br>
 
-  <p id="resultDisplay"></p>
-
-  <button id="btn">Show last work</button>
-  <!--this also dose not work as it should but works so I will leave it for now -->
-  <p id="lastCalculation"></p>
-
-  <!-- JS connected -->
-  <script src="script.js"></script>   
-
-<!--Css stuff I guess need to remove it -->
+    <button id="calculateBtn">Calculate</button>
+    <!--I want to add a button to reset the calculator like nathan did-->
+    <!--edit I Did it but dose work Btm data not showing -->
+    <!-- i did not need to add Btm so we ball-->
+    <button id="reset">Reset</button>
+     <!--Just shows displays result and it even works after reseting -->
+    <p id="resultDisplay"></p>
+    <!--this also dose not work as it should but works so I will leave it for now -->
+    <!--edit IT WORKS but not correcly-->
+    <button id="btn">Show last work</button>
+    <!-- JS connected -->
+    <script src="script.js"></script>
+    <!--style css connected dose nothing for now--> 
+    <link rel="stylesheet" href="styles.css">
+  </div> 
 </body>
 </html>
