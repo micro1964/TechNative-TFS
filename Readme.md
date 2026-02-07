@@ -12,6 +12,7 @@
 <h2>Added buttons operator<h2>
 <h2>Created buttons operator<h2>
 <h2>Created equal buttons<h2>
+<h2>updated css<h2>
 
 <h2>Added Javascript<h2>
 <h2>Added Selector display<h2>
@@ -22,3 +23,4 @@
 <h2>Created Evaluate expression safely <h2>
 <h2>eval() evaluates a string as a math expression created <h2>
 <h2>Created  Append number/operator to display <h2>
+<h2>Made changes to javascript<h2>

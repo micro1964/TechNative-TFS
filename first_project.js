@@ -4,28 +4,37 @@ const display = document.getElementById('display');
 // Select all buttons
 const buttons = document.querySelectorAll('.button');
 
-// Loop through each button and add click event
+let justCalculated = false; // 👈 NEW FLAG
+
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.textContent;
 
         if (value === "C") {
-            // Clear display
             display.textContent = "";
+            justCalculated = false;
+
         } else if (value === "←") {
-            // Backspace
             display.textContent = display.textContent.slice(0, -1);
+
         } else if (value === "=") {
-            // Evaluate expression safely
             try {
-                // eval() evaluates a string as a math expression
                 display.textContent = eval(display.textContent);
+                justCalculated = true; // 👈 mark calculation done
             } catch {
                 display.textContent = "Error";
+                justCalculated = false;
             }
+
         } else {
-            // Append number/operator to display
-            display.textContent += value;
+            // If a number is pressed after "=", start fresh
+            if (justCalculated && !isNaN(value)) {
+                display.textContent = value;
+                justCalculated = false;
+            } else {
+                display.textContent += value;
+                justCalculated = false;
+            }
         }
     });
 });

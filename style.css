@@ -1,7 +1,3 @@
-h2{
-    color: white;
-}
-
 /* Reset */
 * {
     margin: 0;
@@ -10,11 +6,26 @@ h2{
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-/* Page background */
+/* Page layout */
 body {
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page title */
+h2 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* Center calculator in remaining space */
+.main {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
