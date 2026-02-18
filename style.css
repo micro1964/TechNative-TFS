@@ -1,3 +1,12 @@
+/* Add this at the top */
+* {
+  box-sizing: border-box;
+}
+
+input[type="text"],
+button {
+  width: 100%;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f6f8;
@@ -34,7 +43,7 @@ button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 6px;
   background: #4f46e5;
   color: #fff;
@@ -47,12 +56,12 @@ button:hover {
   background: #4338ca;
 }
 
-#btn {
-  background: #10b981;
+ #calculateBtn {
+  background:#4338ca;
 }
 
-#btn:hover {
-  background: #059669;
+#calculateBtn:hover {
+  background:#4338ca;
 }
 
 p {
@@ -61,7 +70,7 @@ p {
   color: #333;
 }
 
-#result {
+ #resultDisplay {
   font-weight: bold;
   color: #4f46e5;
 }
