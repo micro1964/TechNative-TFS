@@ -45,6 +45,10 @@ if (!match) {
   display.style.color = "red";
   return;
 }
+// Open my website
+siteBox.addEventListener("click", () => {
+  window.open("https://tramkar.github.io", "_blank");
+});  
 
 const num1 = Number(match[1]);
 const operator = match[3];

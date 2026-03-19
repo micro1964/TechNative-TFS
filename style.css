@@ -8,8 +8,13 @@
   border-radius: 10px;
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
+
+  /* extra styling you added */
+  border: 15px solid rgb(150, 171, 150);
+  margin: 20px;
 }
 
+/* inputs and buttons inside the box */
 .box input,
 .box button,
 .box p {
@@ -19,13 +24,23 @@
   padding: 8px;
   box-sizing: border-box;
 }
-/*I need add more stuff but idk remember how to do it*/
 
-/*Hey this worked but not really*/
-div {
-  width: 300px;
-  border: 15px solid rgb(150, 171, 150);
-  padding: 50px;
-  margin: 20px;
+/* Website link box */
+#siteBox {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }
-/*just keep adding stuff I will clean this random stuff later*/
+
+#siteBox:hover {
+  background-color: #555;
+}
